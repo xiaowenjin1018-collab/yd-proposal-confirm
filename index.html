@@ -243,10 +243,8 @@ figcaption{font-size:12px;color:var(--mut);margin-top:12px}
   <div class="modal-f">
    <button class="btn btn-copy" id="docopy" type="button">复制结果文字</button>
    <button class="btn btn-dl" id="dodl" type="button">下载确认结果.txt</button>
-   <button class="btn btn-wa" id="dowa" type="button">用 WhatsApp 发送</button>
-   <button class="btn btn-mail" id="domail" type="button">用邮件发送</button>
   </div>
-  <p class="tip">说明：勾选状态只保存在您本机，不会自动上传。想回传结果，最省事的是点「用 WhatsApp 发送」或「用邮件发送」——内容已自动填好，按发送即可；也可以「复制结果文字」粘贴到微信，或下载 txt 发回。</p>
+  <p class="tip">说明：勾选状态只保存在您本机，不会自动上传。点「复制结果文字」，直接粘贴到微信发回即可；需要存档也可以下载 txt。</p>
  </div>
 </div>
 
@@ -294,14 +292,6 @@ figcaption{font-size:12px;color:var(--mut);margin-top:12px}
   }
   document.getElementById('export').addEventListener('click',function(){ renderSummary(); mask.classList.add('on'); });
   document.getElementById('mclose').addEventListener('click',function(){ mask.classList.remove('on'); });
-  document.getElementById('dowa').addEventListener('click',function(){
-    var t=resultText();
-    window.open('https://wa.me/8613434835596?text='+encodeURIComponent(t),'_blank');
-  });
-  document.getElementById('domail').addEventListener('click',function(){
-    var t=resultText();
-    window.location.href='mailto:sales1@youdesignart.com?subject='+encodeURIComponent('官网重构方案 · 样册版 · 客户确认结果')+'&body='+encodeURIComponent(t);
-  });
   mask.addEventListener('click',function(e){ if(e.target===mask) mask.classList.remove('on'); });
   document.getElementById('mname').addEventListener('input',renderSummary);
   document.getElementById('docopy').addEventListener('click',function(){
